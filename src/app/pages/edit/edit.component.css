@@ -1,0 +1,12 @@
+textarea {
+    resize: none;
+  }
+  .btn-primary-spacing {
+    margin-right: 5px;
+  }
+  .btn-warning{
+    color:#fff;
+  }
+  .container{
+    width:600px;
+  }

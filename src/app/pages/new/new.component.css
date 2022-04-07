@@ -1,0 +1,13 @@
+textarea {
+    resize: none;
+  }
+
+.container{
+    max-height: 70px !important;
+  }
+.btn-primary-spacing {
+  margin-right: 5px;
+}
+.btn-warning{
+  color:#fff;
+}
