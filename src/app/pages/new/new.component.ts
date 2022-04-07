@@ -25,7 +25,10 @@ export class NewComponent implements OnInit {
       this.router.navigate(['dashboard']);
     })
   }
-  back(){
-    this.router.navigate(['dashboard']);
-  }
+  // postForm(form:Post){
+  //   this.api.postPost(form).
+  //   subscribe(
+  //     {response: }
+  //   );
+  // }
 }

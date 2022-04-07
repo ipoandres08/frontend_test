@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand text-white">Navbar</a>  
-        <h6  style="color:aliceblue">nombre</h6>
-        <div class="navbar-nav ms-auto">
+        <div class="navbar-nav ms-auto" *ngIf="email_">
+          <h6 style="color:#fff">{{email_.email}}</h6>
+        </div>
+        <div class="navbar-nav ms-50p">
           <button class="btn-primary" type="submit">
             <a class="nav-link text-white" (click)="logout()">logout</a>
           </button>
