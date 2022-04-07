@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post_List } from '../../models/list-post.interface';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Post } from '../../models/post.interface';
 import { ResponseI } from '../../models/response.interface';
 
@@ -21,8 +21,10 @@ export class ApiService {
     return this.http.get<Post>(direction);
   }
   putPost(form:Post):Observable<Post>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json")
     let direction = this.url +"/"+form.id;
-    return this.http.put<Post>(direction,form);
+    return this.http.put<Post>(direction,form,{headers});
+    //,{headers}
   }
   postPost(form:Post):Observable<Post>{
     let direction = this.url;

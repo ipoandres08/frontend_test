@@ -11,6 +11,7 @@ import { Post_List } from '../../models/list-post.interface';
 export class DashboardComponent implements OnInit {
 
   posts?: Post_List[];
+  delete_post?: Number[];
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {

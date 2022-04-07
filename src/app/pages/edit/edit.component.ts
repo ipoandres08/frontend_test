@@ -16,9 +16,9 @@ export class EditComponent implements OnInit {
 
   dataPost!: Post;
   editForm = new FormGroup({
-    id: new FormControl(''),
-    title: new FormControl(''),
-    body: new FormControl(''),
+    id: new FormControl('',[Validators.required]),
+    title: new FormControl('',[Validators.required]),
+    body: new FormControl('',[Validators.required]),
   })
   ngOnInit(): void {
     let postId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -35,10 +35,9 @@ export class EditComponent implements OnInit {
   postForm(form:Post){
     this.api.putPost(form).subscribe(data=>{
       console.log(data);
+      alert("Succes Upload");
       this.router.navigate(['dashboard']);
     });
   }
-  back(){
-    this.router.navigate(['dashboard']);
-  }
+  
 }

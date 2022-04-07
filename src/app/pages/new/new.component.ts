@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../../models/post.interface';
 import { ApiService} from '../../services/api/api.service';
 import { Router,ActivatedRoute } from '@angular/router';
@@ -12,8 +12,8 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class NewComponent implements OnInit {
 
   newForm = new FormGroup({
-    title: new FormControl(''),
-    body: new FormControl(''),
+    title: new FormControl('',[Validators.required]),
+    body: new FormControl('',[Validators.required]),
   })
   constructor(private api:ApiService, private router: Router) { }
 
@@ -25,10 +25,5 @@ export class NewComponent implements OnInit {
       this.router.navigate(['dashboard']);
     })
   }
-  // postForm(form:Post){
-  //   this.api.postPost(form).
-  //   subscribe(
-  //     {response: }
-  //   );
-  // }
+
 }
